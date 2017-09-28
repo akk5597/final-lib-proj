@@ -20,6 +20,7 @@ def home(request):
 
 def signup_success(request):
     return render(request,'signup_success.html')
+
 @login_required
 def addbook_success(request):
     return render(request,'addbook_success.html')
@@ -48,6 +49,7 @@ def signup(request):
 	else:
 		form = SignUpForm()
 	return render(request, 'signup.html', {'form': form})
+
 @login_required
 def addbook(request):
 	form = AddBookForm()

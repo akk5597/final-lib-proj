@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div align='center'>
   <form method="get">
     {{ filter.form.as_p }}
     <button type="submit">Search</button>
   </form>
+ </div>
+ <hr />
   <ul>
   {% for student in filter.qs %}
     <li><a href ="/librarian/students/{{ student.student_id }}/">{{student.student_name}}</a></li>
