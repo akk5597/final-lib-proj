@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Title: {{ book.title }}</h1>
+
+<p><strong>Book ID:</strong> {{ book.book_id }}</p> 
+<p><strong>Author:</strong> {{ book.author }}</p>
+<p><strong>Publisher:</strong> {{ book.publisher }}</p>  
+
+{% if book.status == 'o' %}
+
+<p><strong>Borrower:</strong> {{ borrower}}</p>  
+<br>
+<br>
+ <button type="button" onclick="window.location.href='/librarian/return_book/{{ book.book_id }}/'">Return Book</button>
+ <br>
+{% endif %}
+<font color="red">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</font>
+
+{% endblock %}

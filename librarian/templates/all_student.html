@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<table style="width:100%; font-size:32px;">
+  <tr>
+  	<th><strong>ID</strong></th>
+    <th><strong>Name</strong></th>
+    <th><strong>Class</strong></th> 
+    <th><strong>Div</strong></th>
+  </tr>
+  {% for stud in all_stud %}
+  <tr>
+  	<td>{{stud.student_id}}</td>
+  	<td><a href ="/librarian/students/{{ stud.student_id }}/">{{stud.student_name}}</a></td>
+  	<td>{{stud.student_class}}</td>
+  	<td>{{stud.student_Div}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p><strong>ID:</strong> {{ stud.student_id }}</p> 
+<p><strong>Name:</strong> {{ stud.student_name }}</p>
+<p><strong>class:</strong> {{ stud.student_class }}</p>  
+
+<font color="red">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</font>
+
+{% endblock %}

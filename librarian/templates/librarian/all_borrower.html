@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<table style="width:100%; font-size:32px;">
+  <tr>
+  	<th><strong>Borrower</strong></th>
+    <th><strong>Book</strong></th>
+    <th><strong>due_back</strong></th>
+  </tr>
+  {% for user in all_borrower %}
+  <tr>
+  	<td>{{user.borrower}}</td>
+  	<td>{{user.book}}</td>
+  	<td>{{user.due_back}}</td>
+  {% endfor %}
+</table>
+{% endblock %}
